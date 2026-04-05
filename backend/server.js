@@ -14,6 +14,8 @@ const blogRoutes = require('./routes/blogs');
 const contactRoutes = require('./routes/contacts');
 const settingsRoutes = require('./routes/settings');
 const uploadRoutes = require('./routes/uploads');
+const couponRoutes = require('./routes/coupons');
+const cartRoutes = require("./routes/cart");
 
 const app = express();
 
@@ -38,6 +40,8 @@ app.use('/api/blogs', blogRoutes);
 app.use('/api/contacts', contactRoutes);
 app.use('/api/settings', settingsRoutes);
 app.use('/api/uploads', uploadRoutes);
+app.use('/api/coupons', couponRoutes);
+app.use("/api/cart", cartRoutes);
 
 app.use((err, req, res, next) => {
   console.error(err.stack || err);
